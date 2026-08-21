@@ -12,15 +12,15 @@ type Node = {
 };
 
 const NODES: Node[] = [
-  { key: "idea", label: "Idea", blurb: "A problem noticed becomes something worth exploring.", color: "var(--primary)", x: 12, y: 76 },
-  { key: "validate", label: "Validate", blurb: "Research, talk to people, challenge the assumption.", color: "var(--primary)", x: 29, y: 40 },
-  { key: "team", label: "Team", blurb: "Find the skills the idea is missing.", color: "var(--teal)", x: 46, y: 66 },
-  { key: "build", label: "Build", blurb: "Prototype, run missions, test in the real world.", color: "var(--teal)", x: 63, y: 30 },
-  { key: "launch", label: "Launch", blurb: "Mentors, incubation, resources, first users.", color: "var(--orange)", x: 80, y: 58 },
-  { key: "impact", label: "Impact", blurb: "A working solution in the hands of real people.", color: "var(--success)", x: 94, y: 22 },
+  { key: "idea", label: "Idea", blurb: "A problem noticed becomes something worth exploring.", color: "var(--primary)", x: 12, y: 23 },
+  { key: "validate", label: "Validate", blurb: "Research, talk to people, challenge the assumption.", color: "var(--primary)", x: 29, y: 12 },
+  { key: "team", label: "Team", blurb: "Find the skills the idea is missing.", color: "var(--teal)", x: 46, y: 20 },
+  { key: "build", label: "Build", blurb: "Prototype, run missions, test in the real world.", color: "var(--teal)", x: 63, y: 9 },
+  { key: "launch", label: "Launch", blurb: "Mentors, incubation, resources, first users.", color: "var(--orange)", x: 80, y: 17 },
+  { key: "impact", label: "Impact", blurb: "A working solution in the hands of real people.", color: "var(--success)", x: 94, y: 7 },
 ];
 
-const PATH = "M 12 76 C 20 76 22 40 29 40 C 37 40 39 66 46 66 C 54 66 56 30 63 30 C 71 30 73 58 80 58 C 88 58 88 22 94 22";
+const PATH = "M 12 23 C 20 23 22 12 29 12 C 37 12 39 20 46 20 C 54 20 56 9 63 9 C 71 9 73 17 80 17 C 88 17 88 7 94 7";
 
 export function Hero() {
   const [scrollStage, setScrollStage] = useState(0);
@@ -113,7 +113,7 @@ export function Hero() {
         {/* Interactive innovation path */}
         <div className="relative mt-14 md:mt-20">
           <div className="hidden md:block">
-            <svg viewBox="0 0 100 92" className="w-full" style={{ overflow: "visible" }} aria-hidden="true">
+            <svg viewBox="0 0 100 30" className="w-full" style={{ overflow: "visible" }} aria-hidden="true">
               <path d={PATH} fill="none" stroke="var(--border)" strokeWidth="0.35" />
               <path
                 d={PATH}
@@ -164,7 +164,7 @@ export function Hero() {
                     onFocus={() => setHovered(n.key)}
                     onBlur={() => setHovered(null)}
                     className="pointer-events-auto absolute -translate-x-1/2 text-left"
-                    style={{ left: `${n.x}%`, top: `calc(${(n.y / 92) * 100}% + 18px)` }}
+                    style={{ left: `${n.x}%`, top: `calc(${(n.y / 30) * 100}% + 14px)` }}
                   >
                     <span
                       className={cn(
