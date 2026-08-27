@@ -16,12 +16,12 @@ const kindMatch: Record<string, Conversation["kind"] | "All"> = {
 
 export function ChatPanel({ compact = false }: { compact?: boolean }) {
   const [list, setList] = useState<Conversation[]>(seed);
-  const [activeId, setActiveId] = useState(seed[0].id);
+  const [activeId, setActiveId] = useState(seed[0]!.id);
   const [filter, setFilter] = useState<(typeof kinds)[number]>("All");
   const [draft, setDraft] = useState("");
 
   const shown = filter === "All" ? list : list.filter((c) => c.kind === kindMatch[filter]);
-  const active = list.find((c) => c.id === activeId) ?? list[0];
+  const active = list.find((c) => c.id === activeId) ?? list[0]!;
 
   const send = () => {
     const text = draft.trim();
