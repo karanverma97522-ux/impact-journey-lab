@@ -24,7 +24,7 @@ export function CommandPalette({
   };
 
   return (
-    <CommandDialog open={open} onOpenChange={onOpenChange} title="Search" description="Search the ecosystem">
+    <CommandDialog open={open} onOpenChange={onOpenChange}>
       <CommandInput placeholder="Search ideas, people, missions, opportunities..." />
       <CommandList>
         <CommandEmpty>Nothing matched that search.</CommandEmpty>
